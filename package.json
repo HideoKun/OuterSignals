@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^10.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "ts-loader": "^9.2.6",
@@ -15,7 +17,10 @@
     "webpack-dev-server": "^4.6.0"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "buildProd": "webpack -p && npm run postBuild",
+    "postBuild": "echo '/*    /index.html   200' > ./build/_redirects"
   },
   "repository": {
     "type": "git",

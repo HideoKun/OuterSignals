@@ -1,7 +1,10 @@
 const path = require("path");
 
+const CopyPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 module.exports = {
-  mode: "development",
+  // mode: "development",
   entry: "./src/index.tsx",
   devtool: "inline-source-map",
   module: {
@@ -20,4 +23,14 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
+
+  plugins: [
+    new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: "assets", to: "assets" },
+        { from: path.resolve(__dirname, "./src"), to: "./" },
+      ],
+    }),
+  ],
 };
