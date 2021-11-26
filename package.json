@@ -19,7 +19,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "buildProd": "webpack -p && npm run postBuild",
+    "buildProd": "webpack --mode='production' && npm run postBuild",
     "postBuild": "echo '/*    /index.html   200' > ./build/_redirects"
   },
   "repository": {
