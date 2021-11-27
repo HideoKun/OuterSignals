@@ -2,6 +2,10 @@ const path = require("path");
 
 const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const config = require("./siteConfig.json");
+
+console.log(config);
 
 module.exports = {
   mode: "development",
@@ -20,17 +24,19 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "bundle.js",
+    filename: "bundle.[contenthash].js",
     path: path.resolve(__dirname, "dist"),
   },
 
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyPlugin({
-      patterns: [
-        { from: "assets", to: "assets" },
-        { from: path.resolve(__dirname, "./src"), to: "./" },
-      ],
+    new HtmlWebpackPlugin({
+      ...config,
+      template: path.resolve(__dirname, "assets/index.html"),
     }),
   ],
+
+  devServer: {
+    historyApiFallback: true,
+  },
 };
