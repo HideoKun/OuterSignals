@@ -4,6 +4,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const config = require("./siteConfig.json");
+const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 
 console.log(config);
 
@@ -30,9 +31,16 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{ from: "assets", to: "./" }],
+    }),
+    new HtmlWebpackTagsPlugin({
+      hash: (path, hash) => path + "?" + hash,
+      links: ["styles.css"],
+    }),
     new HtmlWebpackPlugin({
       ...config,
-      template: path.resolve(__dirname, "assets/index.html"),
+      template: path.resolve(__dirname, "templates/index.html"),
     }),
   ],
 
