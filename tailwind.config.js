@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         ...customColors,
       },
+      stroke: {
+        ...customColors,
+      },
     },
   },
   variants: {
