@@ -28,7 +28,7 @@ const IconComponent: React.FC<Props> = ({
     {...{
       xmlns: "http://www.w3.org/2000/svg",
       // todo - prevent dynamic classes from purge logic
-      className: `w-12 h-12 fill-current stroke-${color}-500 text-${color}-100`,
+      className: `w-12 h-12 transition duration-300 fill-current stroke-${color}-500 text-${color}-100 hover:stroke-${color}-900 hover:text-${color}-300`,
       viewBox: "0 0 24 24",
       shapeRendering: "geometricPrecision",
     }}
