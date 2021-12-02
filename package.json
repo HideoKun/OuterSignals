@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "browserslist": [
+    "defaults"
+  ],
   "dependencies": {
     "@types/react": "^17.0.37",
     "clean-webpack-plugin": "^4.0.0",
@@ -17,6 +20,8 @@
   "devDependencies": {
     "@types/react-dom": "^17.0.11",
     "autoprefixer": "^10.4.0",
+    "cross-env": "^7.0.3",
+    "cssnano": "^5.0.12",
     "html-webpack-plugin": "^5.5.0",
     "postcss": "^8.4.4",
     "tailwindcss": "^2.2.19",
@@ -29,7 +34,7 @@
     "start": "webpack-dev-server",
     "buildProd": "webpack --mode='production'",
     "postBuild": "echo '/*    /index.html   200' > ./build/_redirects",
-    "buildCSS": "postcss ./styles/tailwind.css -o ./assets/styles.css"
+    "buildCSS": "cross-env NODE_ENV=production postcss ./styles/tailwind.css -o ./assets/styles.css"
   },
   "repository": {
     "type": "git",

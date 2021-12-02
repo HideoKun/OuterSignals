@@ -1,7 +1,7 @@
 const customColors = require("./styles/colors.config.js");
 
 module.exports = {
-  purge: [],
+  purge: ["./src/**/*.tsx", "./src/**/*.ts", "./src/**/*.js", "./src/**/*.jsx"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
