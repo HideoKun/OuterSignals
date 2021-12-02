@@ -19,6 +19,14 @@ type Props = {
   strokeWidth?: number;
 };
 
+const PREVENT_FROM_PURGE = `
+stroke-charcoal-500 text-charcoal-100
+stroke-persianGreen-500 text-persianGreen-100
+stroke-yellowCrayola-500 text-yellowCrayola-100
+stroke-sandyBrown-500 text-sandyBrown-100
+stroke-burntSienna-500 text-burntSienna-100
+`;
+
 const IconComponent: React.FC<Props> = ({
   shape = "star",
   color = "charcoal",
