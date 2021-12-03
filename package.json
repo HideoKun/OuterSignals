@@ -32,7 +32,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "buildProd": "webpack --mode='production'",
+    "buildProd": "npm run buildCSS && webpack --mode='production'",
     "postBuild": "echo '/*    /index.html   200' > ./build/_redirects",
     "buildCSS": "cross-env NODE_ENV=production postcss ./styles/tailwind.css -o ./assets/styles.css"
   },
