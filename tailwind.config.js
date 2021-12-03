@@ -19,6 +19,17 @@ module.exports = {
       "stroke-sandyBrown-500",
       "text-burntSienna-100",
       "stroke-burntSienna-500",
+
+      "hover:charcoal-100",
+      "hover:stroke-charcoal-500",
+      "hover:text-persianGreen-100",
+      "hover:stroke-persianGreen-500",
+      "hover:text-yellowCrayola-100",
+      "hover:stroke-yellowCrayola-500",
+      "hover:text-sandyBrown-100",
+      "hover:stroke-sandyBrown-500",
+      "hover:text-burntSienna-100",
+      "hover:stroke-burntSienna-500",
     ],
   },
   darkMode: false, // or 'media' or 'class'
