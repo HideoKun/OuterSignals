@@ -1,7 +1,26 @@
 const customColors = require("./styles/colors.config.js");
 
 module.exports = {
-  purge: ["./src/**/*.tsx", "./src/**/*.ts", "./src/**/*.js", "./src/**/*.jsx"],
+  purge: {
+    content: [
+      "./src/**/*.tsx",
+      "./src/**/*.ts",
+      "./src/**/*.js",
+      "./src/**/*.jsx",
+    ],
+    safelist: [
+      "text-charcoal-100",
+      "stroke-charcoal-500",
+      "text-persianGreen-100",
+      "stroke-persianGreen-500",
+      "text-yellowCrayola-100",
+      "stroke-yellowCrayola-500",
+      "text-sandyBrown-100",
+      "stroke-sandyBrown-500",
+      "text-burntSienna-100",
+      "stroke-burntSienna-500",
+    ],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
