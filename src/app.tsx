@@ -1,18 +1,19 @@
-import React from "react";
+import React, { memo } from "react";
 import { Icon } from "./components";
 
-// className="flex items-center justify-center"
+const c = {
+  root: "flex items-center justify-center h-screen text-center",
+};
 
-export const App = () => (
-  <div className="flex items-center justify-center h-screen text-center">
+export const App = memo(() => (
+  <div className={c.root}>
     <div
       className="container p-5 mx-auto bg-white rounded-md shadow-2xl "
       style={{ maxWidth: 350 }}
     >
       <h1
-        className="mb-4 text-2xl uppercase text-charcoal-500"
+        className="mb-4 text-2xl "
         style={{
-          fontFamily: "Fredericka the Great", //"Amatic SC",
           fontSize: 48,
           lineHeight: "3rem",
         }}
@@ -20,13 +21,7 @@ export const App = () => (
         Glos Czapli
       </h1>
 
-      <div
-        className=""
-        style={{
-          fontFamily: "Courier Prime",
-          fontSize: 16,
-        }}
-      >
+      <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Est fugit nisi
         porro repellendus tempora provident voluptatum, illum ad! Voluptatem
         deleniti eum labore distinctio ducimus alias esse aut eius corporis
@@ -42,4 +37,4 @@ export const App = () => (
       </div>
     </div>
   </div>
-);
+));

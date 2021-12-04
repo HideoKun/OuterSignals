@@ -1,3 +1,28 @@
 @tailwind base;
+
+body {
+  @apply text-charcoal-900;
+  /* paper like bg color */
+  font-family: "Courier Prime", monospace;
+
+  background-color: #c3c3c3;
+  background-image: url("https://res.cloudinary.com/daczccvnk/image/upload/v1638630277/glos-czapli-core/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.lead {
+  font-family: "Fredericka the Great", sans-serif;
+  @apply uppercase text-charcoal-500;
+}
+
 @tailwind components;
 @tailwind utilities;
