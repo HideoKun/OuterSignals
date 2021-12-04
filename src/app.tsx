@@ -21,11 +21,21 @@ export const App = memo(() => (
         Glos Czapli
       </h1>
 
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est fugit nisi
-        porro repellendus tempora provident voluptatum, illum ad! Voluptatem
-        deleniti eum labore distinctio ducimus alias esse aut eius corporis
-        doloremque!
+      <div className="mt-8">
+        <div className="flex flex-col">
+          <span className="font-bold uppercase">Zespół redakcyjny</span>
+          <span>Ala Ania Basia Bolko Lili Zuzia</span>
+        </div>
+        <div className="flex flex-col mt-2 ">
+          <span className="font-bold uppercase">Wsparcie redakcyjne</span>
+          <span>Alicja, Asia, Honorata</span>
+        </div>
+        <div className="flex flex-col mt-2">
+          <span className="font-bold uppercase">Zespół Techniczny</span>
+          <span>Staszek i Wojtek</span>
+        </div>
+
+        <div className="mt-6">Pierwszy numer juz wkrótce!!!</div>
       </div>
 
       <div className="flex justify-around pt-5">

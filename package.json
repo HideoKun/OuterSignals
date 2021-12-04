@@ -34,7 +34,8 @@
     "start": "webpack-dev-server",
     "buildProd": "npm run buildCSS && webpack --mode='production'",
     "postBuild": "echo '/*    /index.html   200' > ./build/_redirects",
-    "buildCSS": "cross-env NODE_ENV=production postcss ./styles/tailwind.css -o ./assets/styles.css"
+    "buildCSS": "cross-env NODE_ENV=production postcss ./styles/tailwind.css -o ./assets/styles.css",
+    "buildDevCSS": "postcss ./styles/tailwind.css -o ./assets/styles.css"
   },
   "repository": {
     "type": "git",
