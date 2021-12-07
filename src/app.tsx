@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { Icon } from "./components";
+import "../../slider/src/App.css";
 
 const c = {
   root: "flex items-center min-h-full mx-auto justify-center text-center p-5",
@@ -35,6 +36,43 @@ export const App = memo(() => (
         <div className="flex justify-around pt-5">
           <Icon shape="sun" color="sandyBrown" />
         </div>
+
+        const dataSlider = [
+  { img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80' },
+  { img: 'https://images.unsplash.com/reserve/HgZuGu3gSD6db21T3lxm_San%20Zenone.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' },
+  { img: 'https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80' },
+  { img: 'https://images.unsplash.com/photo-1444464666168-49d633b86797?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80' },
+  { img: 'https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80' }
+]
+
+const Slider = ({length}) => {
+  const [current, setCurrent] = useState(0);
+  length = dataSlider.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length -1 ? 0 : current + 1);
+  };
+  
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1)
+  };
+  
+  return (
+      <div className="slider">
+          <ArrowLeftIcon className="arrow-left h-11 w-11 text-yellow-500" onClick={prevSlide}/>
+          <ArrowRightIcon className="arrow-right h-11 w-11 text-yellow-500" onClick={nextSlide}/>
+          {dataSlider.map((item, index) => {
+              return (
+                  <div className={index === current ? 'slide active' : 'slide'} key={index}>
+                      {index === current && (
+                          <img src={item.img} alt='sth' className="image"/>
+                      )}
+                  </div>
+              )
+          })}
+      </div>   
+  )
+}
 
         <div className="mt-6 text-justify " style={{ letterSpacing: -0.5 }}>
           <p className="mt-6 font-bold text-center">Cześć!!!</p>
@@ -82,3 +120,9 @@ export const App = memo(() => (
     </div>
   </div>
 ));
+
+function App() {
+  return <Slider />
+}
+
+export default App;
